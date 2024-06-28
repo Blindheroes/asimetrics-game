@@ -13,9 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "SELECT * FROM users WHERE `username` = '$username' AND `password` = '$password'";
     $result = mysqli_query($conn, $query);
 
+    $userId = mysqli_fetch_assoc($result)['user_id'];
+
     if (mysqli_num_rows($result) > 0) {
-        $_SESSION['loggedin'] = $username;
-        header("Location: ../../index.php?page=index");
+        $_SESSION['loggedin'] = $userId;
+        header("Location: ../../index.php?page=dashboard");
         die();
     } else {
         echo "Login failed";

@@ -12,7 +12,7 @@ $conn = new mysqli($dbserver, $dbusername, $dbpassword,$db);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }else{
-    echo "Connected successfully <br>";
+    // echo "Connected successfully <br>";
 
     $query = "SELECT * FROM `configuration` ";
     $result = mysqli_query($conn,$query);

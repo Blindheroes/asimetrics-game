@@ -17,9 +17,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Hash password
     // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
+    
+    
     // Execute the statement
     if ($stmt->execute()) {
-        $_SESSION['loggedin'] = $username;
+        // get userID
+        $query = "SELECT * FROM users WHERE `username` = '$username' AND `password` = '$password'";
+        $result = mysqli_query($conn, $query);
+        $userId = mysqli_fetch_assoc($result)['user_id'];
+        $_SESSION['loggedin'] = $userId;
         header("Location: ../../index.php?page=index");
         die();
     } else {

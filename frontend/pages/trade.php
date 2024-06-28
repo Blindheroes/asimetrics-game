@@ -5,26 +5,50 @@ global $description;
 ?>
 
 
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <title><?= $title.$seperator.$description?></title>
-    </head>
-    <body>
+
         <!-- header/navbar -->
             <?php require_once("frontend/pages/components/navbar.php"); ?>
         <!-- end of header/navbar -->
-        <main>
-            <h1>Trade</h1>
+        <main class="bg-gray-100 " >
+            <div class="container"></div>
+           
+                <div  class="card card-body  border-0 mb-6 shadow-sm  py-lg-3 px-lg-4 ">
+                    <div class="mb-5">
+                        <h4 class="mb-1">Trade</h4>
+                        <p class="mb-0 fs-6">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.
+                        </p>
+                    </div>
+                    <form action="" method="get" class="row g-3 ">
+                        <div class="col-lg-7">
+                            <label for="search-symbol" class="form-label">labell</label>
+                            <select name="search-symbol" id="search-symbol" class="form-select">
+                                <option selected disabled value>Chose..</option>
+                                <option selected value="BBCA">BBCA</option>
+                                <option value="BBRI">BBRI</option>
+                                <option value="BSI">BSI</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="trade-action" class="form-label">Action</label>
+                            <select name="trade-action" id="trade-action" class="form-select">
+                                <option selected disabled value>Chose..</option>
+                                <option selected value="BBCA">BUY</option>
+                                <option value="BBRI">SELL</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-1">
+                            <label for="trade-qty" class="form-label">Qty</label>
+                            <input type="number" id="trade-qty" name="trade-qty" class="form-control" min="1" max="1000">
+                        </div>
+                        <div class="col-12 mt-4">
+                            <button class="btn btn-primary me-2">Go!</button>
+                        </div>
+                    </form>
+                </div>
+           
           
         </main>
       <!-- footer -->
             <?php require_once("frontend/pages/components/footer.php"); ?>
      <!-- end of footer -->
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>
-    </html>
