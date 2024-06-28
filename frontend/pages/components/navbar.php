@@ -63,6 +63,9 @@
                         </li>
         <?php } else{ ?> 
         <li class="nav-item">
+          <a class="nav-link" href="index.php?page=main">Beranda</a>          
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="index.php?page=dashboard">Dashboard</a>          
         </li>
         <li class="nav-item">

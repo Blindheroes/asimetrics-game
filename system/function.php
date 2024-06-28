@@ -15,6 +15,8 @@ if (isset($_GET['page']))   {
         require_once("frontend/pages/index.php");
     }elseif ($page=='dashboard') {
         require_once("frontend/pages/dashboard.php");
+    }elseif ($page=='main') {
+        require_once("frontend/pages/beranda.php");
     } elseif ($page=='trade') {
         require_once("frontend/pages/trade.php");
     } elseif ($page=='reserch') {
